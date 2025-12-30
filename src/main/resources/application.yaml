@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: BookManagement
+  
+  # データベース接続設定
+  datasource:
+    url: jdbc:h2:mem:bookdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    
+  # H2データベースをブラウザで確認するための設定
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      
+  # JPA (DB操作の仕組み) の設定
+  jpa:
+    hibernate:
+      # プログラムのEntityに合わせて自動でテーブルを作成・更新する
+      ddl-auto: update
+    # 実行されたSQLをコンソールに表示する（学習に非常に役立ちます）
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
